@@ -5,8 +5,10 @@ import ImmersiveStory from "@/components/home/ImmersiveStory";
 import VideoPlaceholder from "@/components/home/VideoPlaceholder";
 import ExperienceGrid from "@/components/home/ExperienceGrid";
 import ImageMosaic from "@/components/home/ImageMosaic";
+import FeaturedRooms from "@/components/home/FeaturedRooms";
 import Testimonials from "@/components/home/Testimonials";
 import NewsletterSignup from "@/components/home/NewsletterSignup";
+import LocationTeaser from "@/components/home/LocationTeaser";
 import FinalCTA from "@/components/home/FinalCTA";
 import WhatsAppButton from "@/components/home/WhatsAppButton";
 
@@ -19,8 +21,10 @@ export default function Home() {
       <VideoPlaceholder />
       <ExperienceGrid />
       <ImageMosaic />
+      <FeaturedRooms />
       <Testimonials />
-      <NewsletterSignup />
+      {/* <NewsletterSignup /> */}
+      <LocationTeaser />
       <FinalCTA />
       <WhatsAppButton />
     </>
