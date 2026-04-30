@@ -4,17 +4,26 @@ import { BOOKING_URL } from "@/lib/constants";
 
 export default function FinalCTA() {
   return (
-    <section className="bg-navy py-20 md:py-28">
-      <div className="max-w-[800px] mx-auto px-6 text-center">
-        <h2 className="font-display text-white text-3xl md:text-5xl font-medium mb-6">
+    <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src="/images/overview/hero1.jpg"
+          alt="Ashby Manor Cape Town"
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-navy/45" />
+      </div>
+      <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">
+        <h2 className="font-display text-white text-3xl md:text-5xl font-medium mb-4">
           Your Cape Town Escape Awaits
         </h2>
-        <CTAButton href={BOOKING_URL} variant="primary" className="mb-4">
+        <p className="text-white/70 font-body text-sm md:text-base mb-8 max-w-lg">
+          Book direct for the best rate. Complimentary breakfast, free parking &amp; personalised service included.
+        </p>
+        <CTAButton href={BOOKING_URL} variant="primary">
           Check Availability
         </CTAButton>
-        <p className="text-slate_mid font-body text-sm mt-4">
-          Direct booking · Best rate guaranteed · Personalised service
-        </p>
       </div>
     </section>
   );
