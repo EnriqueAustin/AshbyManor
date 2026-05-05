@@ -3,10 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import CTAButton from "@/components/shared/CTAButton";
 import { BOOKING_URL } from "@/lib/constants";
 
-const heroSets = [
-  { left: "/images/overview/hero1.jpg", right: "/images/overview/hero2.jpg" },
-  { left: "/images/overview/702451820.jpg", right: "/images/overview/714309515.jpg" },
-  { left: "/images/overview/702451873.jpg", right: "/images/overview/809341491.jpg" },
+const heroImages = [
+  "/images/overview/hero1.jpg",
+  "/images/overview/hero2.jpg",
+  "/images/overview/702451820.jpg",
+  "/images/overview/714309515.jpg",
+  "/images/overview/702451873.jpg",
+  "/images/overview/809341491.jpg",
 ];
 
 export default function DualHero() {
@@ -14,36 +17,26 @@ export default function DualHero() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % heroSets.length);
+      setCurrent((prev) => (prev + 1) % heroImages.length);
     }, 7000);
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section className="relative h-screen min-h-[700px] overflow-hidden">
-      {/* Background image pairs - stacked absolutely for crossfade */}
-      {heroSets.map((set, i) => (
+      {/* Background images - stacked absolutely for crossfade */}
+      {heroImages.map((src, i) => (
         <div
           key={i}
-          className="absolute inset-0 grid grid-cols-1 md:grid-cols-2 transition-opacity duration-1000 ease-in-out"
+          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
           style={{ opacity: i === current ? 1 : 0, zIndex: i === current ? 1 : 0 }}
         >
-          <div className="relative h-[50vh] md:h-full overflow-hidden">
-            <img
-              src={set.left}
-              alt="Ashby Manor Cape Town"
-              className="w-full h-full object-cover"
-              loading={i === 0 ? "eager" : "lazy"}
-            />
-          </div>
-          <div className="relative h-[50vh] md:h-full overflow-hidden">
-            <img
-              src={set.right}
-              alt="Ashby Manor Guest House"
-              className="w-full h-full object-cover"
-              loading={i === 0 ? "eager" : "lazy"}
-            />
-          </div>
+          <img
+            src={src}
+            alt="Ashby Manor Cape Town"
+            className="w-full h-full object-cover"
+            loading={i === 0 ? "eager" : "lazy"}
+          />
         </div>
       ))}
 
@@ -89,7 +82,7 @@ export default function DualHero() {
 
         {/* Slide indicators */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
-          {heroSets.map((_, i) => (
+          {heroImages.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
