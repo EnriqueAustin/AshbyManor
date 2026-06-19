@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import CTAButton from "@/components/shared/CTAButton";
 import { BOOKING_URL } from "@/lib/constants";
 
@@ -86,6 +86,8 @@ export default function DualHero() {
             <button
               key={i}
               onClick={() => setCurrent(i)}
+              aria-label={`Show slide ${i + 1} of ${heroImages.length}`}
+              aria-current={i === current}
               className={`h-[3px] rounded-full transition-all duration-500 ${i === current ? "w-10 bg-white" : "w-5 bg-white/40"}`}
             />
           ))}

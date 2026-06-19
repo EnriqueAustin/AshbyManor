@@ -1,6 +1,6 @@
 import React from "react";
 import { BOOKING_URL } from "@/lib/constants";
-import { Wifi, Tv, Bath, Users, BedDouble } from "lucide-react";
+import { Users } from "lucide-react";
 
 export default function RoomCard({ room, horizontal = false }) {
   if (horizontal) {

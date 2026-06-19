@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BOOKING_URL } from "@/lib/constants";
 
 export default function CTAButton({ children, variant = "primary", href, to, className = "", ...props }) {
   const base = "inline-flex items-center justify-center font-body font-semibold text-sm transition-all duration-150 hover:-translate-y-px";
